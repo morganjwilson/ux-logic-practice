@@ -20,8 +20,7 @@
     otherwise return "red";
 */
 function getColor(number) {
-  // Uncomment and complete
-  return /* ( Your code Here ) ?  Your code Here  :  Your code Here */;
+  return number > 10 ? "blue" : "red";
 }
 
 /* 
@@ -50,7 +49,15 @@ console.log(getColor(10) === "red");
 */
 function lightStatus(brightness) {
   let result = "";
-  // Put your logic here
+  if ((brightness = 0)) {
+    return "off";
+  }
+  if (brightness > 0 < 200) {
+    return "dimmed";
+  }
+  if (brightness >= 200) {
+    return "on";
+  }
   return result;
 }
 
@@ -88,17 +95,27 @@ console.log(lightStatus(255) === "on");
 
 function getLightBulbStatusDisplayString(status) {
   let result = "";
-  /* uncomment and complete
-    switch( your code here ) {
-      case "your code here": 
-        your code here;
-        break;
-      etc...
-    }
-    */
+  switch (status) {
+    case "on":
+      return "The house is bright!";
+
+    case "off":
+      return "The house is dark.";
+
+    case "dimmed":
+      return "The house is nice and dim";
+  
+    case "offline":
+      return "The house is dark and we can't find the lightbulb!";
+
+    case "deleted":
+      return "The lightbulb has been removed from the system";
+  
+    case "broken":
+      return "The house is dark and we can't turn the light on!";
+  }
   return result;
 }
-
 /* 
    -------TESTS---------------------------------------------------------------
    Run these commands to make sure you did it right. They should all be true.
@@ -215,13 +232,33 @@ function turnOffLight(lightName) {
 /* 
    -------YOUR CODE-----------------------------------------------------------
 */
-function updateLights(
-  somebodyIsHome,
-  theyAreWatchingTV,
-  itIsDarkOutside,
-  theyAreCooking,
-  theyWentToBed
-) {
+function updateLights(lightName) {
+  if (somebodyIsHome) {
+    currentLights[currentLights] = "on";
+  }
+  if (theyAreWatchingTV) {
+    currentLights [livingroomLight] = "off";
+    currentLights [diningroomLight] = "off";
+  } else {
+    console.log (livingroomLight + diningroomLight)
+  }
+  if (itIsDarkOutside) {
+    currentLights[frontporchLight] = "off";
+  } else {
+    console.log (frontporchLight)
+  }
+  if (theyAreCooking) {
+    currentLights[kitchenLight] = "off";
+  } else {
+    console.log (kitchenLight)
+  }
+  if (theyWentToBed) {
+    currentLights[currentLights] = "off";
+  } else {
+    console.log (currentlights)
+  }
+
+{
   // Write your code here!  You don't need to return anything, just call the given functions
   // You should be using if else statements and the function arguments
   // example of turning a light on
